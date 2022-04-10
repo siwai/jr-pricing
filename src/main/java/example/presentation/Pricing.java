@@ -27,13 +27,13 @@ public class Pricing {
     @GetMapping
     @ApiOperation("料金計算")
     String pricing(
-            @ApiParam(value="大人人数", defaultValue = "1") @RequestParam int adult,
-            @ApiParam(value = "子供人数", defaultValue = "1") @RequestParam int child,
-            @ApiParam(value="出発日", defaultValue = "2020-12-15") @RequestParam DepartureDate departureDate,
-            @ApiParam(value="目的地", defaultValue = "新大阪") @RequestParam Destination destination,
-            @ApiParam(value="座席区分", defaultValue = "指定席") @RequestParam SeatType seatType,
-            @ApiParam(value="列車種類", defaultValue = "ひかり") @RequestParam TrainType trainType,
-            @ApiParam(value="片道/往復", defaultValue = "片道") @RequestParam TicketType ticketType
+            @ApiParam(value="adults", defaultValue = "1") @RequestParam int adult,
+            @ApiParam(value="children", defaultValue = "1") @RequestParam int child,
+            @ApiParam(value="departureDate", defaultValue = "2020-12-15") @RequestParam DepartureDate departureDate,
+            @ApiParam(value="destination", defaultValue = "新大阪") @RequestParam Destination destination,
+            @ApiParam(value="seatType", defaultValue = "指定席") @RequestParam SeatType seatType,
+            @ApiParam(value="trainType", defaultValue = "ひかり") @RequestParam TrainType trainType,
+            @ApiParam(value="ticketType", defaultValue = "片道") @RequestParam TicketType ticketType
             ) {
 
         Attempt attempt = new Attempt(adult, child, departureDate, destination, seatType, trainType, ticketType);
