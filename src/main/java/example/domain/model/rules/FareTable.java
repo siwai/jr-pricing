@@ -1,5 +1,6 @@
 package example.domain.model.rules;
 
+import example.domain.model.specification.Adult;
 import example.domain.model.specification.Destination;
 import org.springframework.stereotype.Component;
 
@@ -21,5 +22,10 @@ public class FareTable {
 
     public int fare(Destination destination) {
         return map.get(destination);
+    }
+
+    public int fareForAdult(Destination destination, Adult adult) {
+        int fare = map.get(destination);
+        return fare * adult.getValue();
     }
 }

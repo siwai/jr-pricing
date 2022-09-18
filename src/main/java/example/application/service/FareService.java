@@ -26,6 +26,7 @@ public class FareService {
 
     public Amount amountFor(Attempt attempt) {
         // 仮実装（ひかり、大人１名）
+        // TODO: SeatType, TrainType, ticketType, 人數を考慮する
         Destination to = attempt.to();
         Amount fare = new Amount(fareTable.fare(to) + surchargeTable.surcharge(to));
         return fare;
