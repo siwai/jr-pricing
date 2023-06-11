@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FareServiceTest {
+public class FareServiceTest {
 
     static private FareService fareService;
 
@@ -19,7 +19,7 @@ class FareServiceTest {
     static private DistanceTable distanceTable;
 
     @BeforeAll
-    static void setUp() {
+    public static void setUp() {
         fareTable = new FareTable();
         surchargeTable = new SurchargeTable();
         distanceTable = new DistanceTable();
@@ -28,7 +28,7 @@ class FareServiceTest {
     }
 
     @Test
-    void 基本() {
+    public void 基本() {
         Attempt attempt = AttemptFactory.大人1_通常期_新大阪_指定席_ひかり_片道();
         Amount result = fareService.amountFor(attempt);
         Destination destination = Destination.新大阪;
